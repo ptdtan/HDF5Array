@@ -17,12 +17,12 @@
 
 .get_dump_files_global_counter_filepath <- function()
 {
-    file.path(tempdir(), "HDF5Array_dump_files_global_counter")
+    file.path(NoraCommon::tempdir(), "HDF5Array_dump_files_global_counter")
 }
 
 .get_dump_names_global_counter_filepath <- function()
 {
-    file.path(tempdir(), "HDF5Array_dump_names_global_counter")
+    file.path(NoraCommon::tempdir(), "HDF5Array_dump_names_global_counter")
 }
 
 ### Called by .onLoad() hook (see zzz.R file).
@@ -169,7 +169,7 @@ getHDF5DumpDir <- function()
 setHDF5DumpDir <- function(dir)
 {
     if (missing(dir)) {
-        dir <- file.path(tempdir(), "HDF5Array_dump")
+        dir <- file.path(NoraCommon::tempdir(), "HDF5Array_dump")
     } else if (!isSingleString(dir) || dir == "") {
         stop(wmsg("'dir' must be a non-empty string specifying the path ",
                   "to a new or existing directory"))
@@ -329,12 +329,12 @@ getHDF5DumpCompressionLevel <- function()
 ### Called by .onLoad() hook (see zzz.R file).
 get_HDF5_dump_logfile <- function()
 {
-    file.path(tempdir(), "HDF5Array_dump_log")
+    file.path(NoraCommon::tempdir(), "HDF5Array_dump_log")
 }
 
 .get_dataset_creation_global_counter_filepath <- function()
 {
-    file.path(tempdir(), "HDF5Array_dataset_creation_global_counter")
+    file.path(NoraCommon::tempdir(), "HDF5Array_dataset_creation_global_counter")
 }
 
 ### Called by .onLoad() hook (see zzz.R file).
